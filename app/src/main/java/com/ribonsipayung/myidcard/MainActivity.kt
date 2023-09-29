@@ -44,11 +44,12 @@ data class Message(val author: String, val body: String)
 
 @Composable
 fun MyIdCard(msg: Message) {
+    // komponen Box digunakan untuk mengatur tata letak elemen-elemen di dalamnya.
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
-        // membuat teks "MY PROFILE" di pusat atas
+        // menampilkan teks "MY PROFILE" di pusat atas dengan gaya huruf khusus.
         Text(
             text = "MY PROFILE",
             style = TextStyle(fontSize = 40.sp),
@@ -57,6 +58,7 @@ fun MyIdCard(msg: Message) {
                 .padding(50.dp)
         )
 
+        // komponen Column digunakan untuk menata elemen-elemen vertikal.
         Column(
             modifier = Modifier
                 .fillMaxWidth()
@@ -88,13 +90,14 @@ fun MyIdCard(msg: Message) {
             )
         }
 
-        // Informasi Icon
+        // menampilkan ikon-ikon kontak dalam kolom.
         val myIcons = listOf(
             Icon(R.drawable.email, "ribonsipayung02@gmail.com"),
             Icon(R.drawable.telepon, "087896151354"),
             Icon(R.drawable.home, "Yogyakarta, Indonesia")
         )
 
+        // kolom untuk ikon-ikon kontak di bagian bawah.
         Column(
             modifier = Modifier
                 .align(Alignment.BottomCenter)
@@ -121,7 +124,7 @@ fun MyIdCard(msg: Message) {
         }
     }
 }
-
+// data class untuk menyimpan informasi ikon kontak.
 data class Icon(val iconResId: Int, val text: String, val iconContentDescription: String = "")
 
 
